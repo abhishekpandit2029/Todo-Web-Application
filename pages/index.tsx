@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className={styles.homecontainer}>
       <div className={styles.blockone}>
-        <p className={styles.p1}>Elevate Your Efficiency with Acheivo</p>
+        <p className={styles.p1}>Elevate Your <br /> Efficiency <br /> with Acheivo</p>
         <p className={styles.p2}>
           Empowering You to Master Your Tasks Efficiently.
         </p>
