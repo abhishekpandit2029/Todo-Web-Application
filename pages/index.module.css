@@ -21,8 +21,8 @@
 
 .p2{
     font-size: 30px;
-    line-height: 70px;
     font-weight: 600;
+    margin: 10px 0;
 }
 
 .p3{
@@ -59,7 +59,6 @@
     
     .p2{
         font-size: 28px;
-        line-height: 60px;
     }
     
     .p3{
@@ -74,8 +73,7 @@
     }
     
     .p2{
-        font-size: 22px;
-        line-height: 50px;
+        font-size: 26px;
     }
     
     .p3{
@@ -94,18 +92,14 @@
     }
     
     .p2{
-        font-size: 20px;
-        line-height: 50px;
+        font-size: 24px;
     }
     
-    .p3{
-        font-size: 15px;
-    }
     .hr{
         margin: 10px 0 20px;
     }
     .button{
-        padding: 7px 13px;
+        padding: 10px 15px;
     }
 }
 
@@ -115,15 +109,14 @@
         width: 100%;
     }
     .p1{
-        font-size: 55px;
-        line-height: 65px;
+        font-size: 50px;
+        line-height: 60px;
         margin-bottom: 10px;
         width: 85%;
     }
     
     .p2{
-        font-size: 18px;
-        line-height:normal;
+        font-size: 22px;
         margin-bottom: 5px;
     }
 }
