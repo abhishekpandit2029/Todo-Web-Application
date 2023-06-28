@@ -1,6 +1,6 @@
 import styles from "./index.module.css";
 import Link from "next/link";
-import { useSession, signIn } from "next-auth/react";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Home() {
   const { data: session } = useSession();
@@ -20,19 +20,20 @@ export default function Home() {
         </p>
         <hr className={styles.hr} />
       </div>
+
       <div className={styles.blocktwo}>
-        {session && (
+        {/* {session && (
           <div>
             <p className={styles.p3}>Welcome back! Access granted, enjoy.</p>
             <Link href="/blog">
               <button className={styles.button}>Proceed</button>
             </Link>
           </div>
-        )}
+        )} */}
 
         {!session && (
           <div>
-            <p className={styles.p3}>Sign In to continue</p>
+            {/* <p className={styles.p3}>Sign In to continue</p> */}
             <Link href="/api/auth/signin">
               <button
                 className={styles.button}
@@ -47,12 +48,28 @@ export default function Home() {
           </div>
         )}
 
-        {/* <div>
-          <p className={styles.p3}>Let's proceed with Achievo.</p>
+        {session && (
+          <div>
+            {/* <p className={styles.p3}>Sign In to continue</p> */}
+            <Link href="/api/auth/signout">
+              <button
+                className={styles.button}
+                onClick={(e) => {
+                  e.preventDefault();
+                  signOut();
+                }}
+              >
+                Sign Out
+              </button>
+            </Link>
+            <p className={styles.p3}>Let's proceed with Achievo.</p>
           <Link href="/comments">
             <button className={styles.button}>Proceed</button>
           </Link>
-        </div> */}
+          </div>
+        )}
+
+
       </div>
     </div>
   );
