@@ -31,9 +31,9 @@ export default function Home() {
           </div>
         )} */}
 
-        {!session && (
+        {/* {!session && (
           <div>
-            {/* <p className={styles.p3}>Sign In to continue</p> */}
+            <p className={styles.p3}>Sign In to continue</p>
             <Link href="/api/auth/signin">
               <button
                 className={styles.button}
@@ -50,7 +50,7 @@ export default function Home() {
 
         {session && (
           <div>
-            {/* <p className={styles.p3}>Sign In to continue</p> */}
+            <p className={styles.p3}>Sign In to continue</p>
             <Link href="/api/auth/signout">
               <button
                 className={styles.button}
@@ -62,14 +62,15 @@ export default function Home() {
                 Sign Out
               </button>
             </Link>
-            <p className={styles.p3}>Let's proceed with Achievo.</p>
+          </div>
+        )} */}
+
+        <div>
+          <p className={styles.p3}>Let's proceed with Achievo.</p>
           <Link href="/comments">
             <button className={styles.button}>Proceed</button>
           </Link>
-          </div>
-        )}
-
-
+        </div>
       </div>
     </div>
   );

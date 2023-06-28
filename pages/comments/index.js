@@ -121,6 +121,7 @@
 
 import styles from "./index.module.css";
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 
 export default function CommentsPage() {
   const commentInputRef = useRef(null);
@@ -189,65 +190,84 @@ export default function CommentsPage() {
     setEditedText("");
   };
 
+  let string = JSON.stringify(comments);
+
+  // Check if localStorage is available before using it
+  if (typeof localStorage !== "undefined") {
+    localStorage.setItem("comments", string);
+  } else {
+    // Handle the absence of localStorage, such as using a different storage mechanism or displaying an error message
+    console.error("localStorage is not available. Unable to store comments.");
+  }
+
   return (
     <div className={styles.taskscontainer}>
-      <div>
-        <p className={styles.p2}>Achievo</p>
+      
+      <Link href="/">
+        <p className={styles.p2}>Achievo</p></Link>
         {/* <p>Hi, </p> */}
-      </div>
-      <div className={styles.firstblock}>
-        <input
-          type="text"
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-          className={styles.commentinputtext}
-          ref={commentInputRef}
-        />
-        <button className={styles.button} onClick={submitComment}>
-          Create
-        </button>
-      </div>
+    
 
-      <div className={styles.secondblock}>
-        {comments.map((comment) => (
-          <div key={comment.id} className={styles.singletask}>
-            {editCommentId === comment.id ? (
-              <div>
-                <input
-                  className={styles.commentinputtext}
-                  type="text"
-                  value={editedText}
-                  onChange={(e) => setEditedText(e.target.value)}
-                />
-                <button
-                  className={styles.button}
-                  onClick={() => updateComment(comment.id)}
-                >
-                  Save
-                </button>
-                <button className={styles.button} onClick={cancelEditing}>
-                  Cancel
-                </button>
-              </div>
-            ) : (
-              <div>
-                <p className={styles.commenttext}>{comment.text}</p>
-                <button
-                  className={styles.button}
-                  onClick={() => startEditing(comment.id, comment.text)}
-                >
-                  Update
-                </button>
-                <button
-                  className={styles.button}
-                  onClick={() => deleteComment(comment.id)}
-                >
-                  Delete
-                </button>
-              </div>
-            )}
-          </div>
-        ))}
+      <div className={styles.maintasksection}>
+        <div className={styles.firstblock}>
+          <input
+            type="text"
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+            className={styles.commentinputtext}
+            ref={commentInputRef}
+          />
+          <button className={styles.button} onClick={submitComment}>
+            Create
+          </button>
+        </div>
+
+        <hr className={styles.hr} />
+
+        <div className={styles.singletask}>
+          {comments.map((comment) => (
+            <div key={comment.id}>
+              {editCommentId === comment.id ? (
+                <div className={styles.savecancel}>
+                  <input
+                    className={styles.commentinputtext}
+                    type="text"
+                    value={editedText}
+                    onChange={(e) => setEditedText(e.target.value)}
+                  />
+                  <div style={{display:"flex",flexDirection:"row", gap:"20px"}}>
+                    <button
+                      className={styles.button}
+                      onClick={() => updateComment(comment.id)}
+                    >
+                      Save
+                    </button>
+                    <button className={styles.button} onClick={cancelEditing}>
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className={styles.updatedelete}>
+                  <p className={styles.commenttext}> {comment.text}</p>
+                  <div style={{display:"flex",flexDirection:"row", gap:"20px"}}>
+                  <button
+                    className={styles.button}
+                    onClick={() => startEditing(comment.id, comment.text)}
+                  >
+                    Update
+                  </button>
+                  <button
+                    className={styles.button}
+                    onClick={() => deleteComment(comment.id)}
+                  >
+                    Delete
+                  </button>
+                </div></div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
