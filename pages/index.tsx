@@ -7,7 +7,9 @@ export default function Home() {
   return (
     <div className={styles.homecontainer}>
       <div className={styles.blockone}>
-        <p className={styles.p1}>Elevate Your <br /> Efficiency <br /> with Acheivo</p>
+        <p className={styles.p1}>
+          Elevate Your <br /> Efficiency <br /> with Acheivo
+        </p>
         <p className={styles.p2}>
           Empowering You to Master Your Tasks Efficiently.
         </p>
@@ -19,7 +21,6 @@ export default function Home() {
         <hr className={styles.hr} />
       </div>
       <div className={styles.blocktwo}>
-        
         {session && (
           <div>
             <p className={styles.p3}>Welcome back! Access granted, enjoy.</p>
@@ -45,6 +46,13 @@ export default function Home() {
             </Link>
           </div>
         )}
+
+        {/* <div>
+          <p className={styles.p3}>Let's proceed with Achievo.</p>
+          <Link href="/comments">
+            <button className={styles.button}>Proceed</button>
+          </Link>
+        </div> */}
       </div>
     </div>
   );

@@ -119,7 +119,7 @@
 //   );
 // }
 
-
+import styles from "./index.module.css";
 import { useState, useRef, useEffect } from "react";
 
 export default function CommentsPage() {
@@ -190,40 +190,65 @@ export default function CommentsPage() {
   };
 
   return (
-    <>
+    <div className={styles.taskscontainer}>
       <div>
+        <p className={styles.p2}>Achievo</p>
+        {/* <p>Hi, </p> */}
+      </div>
+      <div className={styles.firstblock}>
         <input
           type="text"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
+          className={styles.commentinputtext}
           ref={commentInputRef}
         />
-        <button onClick={submitComment}>Submit comment</button>
+        <button className={styles.button} onClick={submitComment}>
+          Create
+        </button>
       </div>
-      {comments.map((comment) => (
-        <div key={comment.id}>
-          {comment.id}.
-          {editCommentId === comment.id ? (
-            <>
-              <input
-                type="text"
-                value={editedText}
-                onChange={(e) => setEditedText(e.target.value)}
-              />
-              <button onClick={() => updateComment(comment.id)}>Save</button>
-              <button onClick={cancelEditing}>Cancel</button>
-            </>
-          ) : (
-            <>
-              {comment.text}
-              <button onClick={() => startEditing(comment.id, comment.text)}>
-                Update
-              </button>
-              <button onClick={() => deleteComment(comment.id)}>Delete</button>
-            </>
-          )}
-        </div>
-      ))}
-    </>
+
+      <div className={styles.secondblock}>
+        {comments.map((comment) => (
+          <div key={comment.id} className={styles.singletask}>
+            {editCommentId === comment.id ? (
+              <div>
+                <input
+                  className={styles.commentinputtext}
+                  type="text"
+                  value={editedText}
+                  onChange={(e) => setEditedText(e.target.value)}
+                />
+                <button
+                  className={styles.button}
+                  onClick={() => updateComment(comment.id)}
+                >
+                  Save
+                </button>
+                <button className={styles.button} onClick={cancelEditing}>
+                  Cancel
+                </button>
+              </div>
+            ) : (
+              <div>
+                <p className={styles.commenttext}>{comment.text}</p>
+                <button
+                  className={styles.button}
+                  onClick={() => startEditing(comment.id, comment.text)}
+                >
+                  Update
+                </button>
+                <button
+                  className={styles.button}
+                  onClick={() => deleteComment(comment.id)}
+                >
+                  Delete
+                </button>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
