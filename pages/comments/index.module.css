@@ -16,7 +16,6 @@
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.08);
 }
 
-
 .firstblock {
   display: flex;
   flex-direction: row;
@@ -60,6 +59,7 @@
   border: none;
   outline: none;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.08);
+  font-family: 'Poppins', sans-serif;
 }
 
 .p2 {
@@ -102,6 +102,7 @@
   border: none;
   outline: none;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.08);
+  font-family: 'Poppins', sans-serif;
 }
 
 
@@ -112,10 +113,7 @@
   .taskscontainer {
     padding: 0 30px;
     width: 100%;
-  }
-
-  .commentinputtext, .commenttext {
-    font-size: 16px;
+    margin: 30px auto;
   }
 
   .p2 {
@@ -146,6 +144,7 @@
     padding: 0 10px;
     width: 145px;
     overflow-x: hidden;
+    top: 13px;
   }
 
   .searchbarsection{
@@ -155,6 +154,7 @@
   .searchbarsection input{
     width: 140px;
     height: 50px;
+    font-size: 15px;
   }
 
   .taskscontainer {
