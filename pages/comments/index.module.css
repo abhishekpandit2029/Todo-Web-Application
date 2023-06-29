@@ -23,7 +23,7 @@
 }
 
 .hr {
-  width: 90%;
+  width: 95%;
   margin: 30px 0 0;
 }
 
@@ -135,16 +135,15 @@
   }
 
   .commentinputtext{
-    padding: 0 10px;
     width: 200px;
     overflow-x: hidden;
   }
 
-  .commenttext {
+  .commenttext, .singletask .commentinputtext {
     padding: 0 10px;
     width: 145px;
     overflow-x: hidden;
-    top: 13px;
+    top: 5px;
   }
 
   .searchbarsection{
@@ -164,15 +163,15 @@
   }
 
   .maintasksection {
-    padding: 30px;
-    border-radius: 40px 40px;
+    padding: 30px 20px;
+    border-radius: 30px 30px;
     /* border: 1px solid red; */
   }
 
   .searchbarsection {
     padding: 30px;
     margin-bottom: 15px;
-    border-radius: 40px 40px ;
+    border-radius: 30px 30px;
   }
 
   .updatedelete,
