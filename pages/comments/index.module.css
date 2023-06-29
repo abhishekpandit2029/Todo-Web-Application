@@ -19,7 +19,7 @@
 .firstblock {
   display: flex;
   flex-direction: row;
-  gap: 15px;
+  gap: 20px;
 }
 
 .hr {
@@ -35,15 +35,15 @@
 .updatedelete,
 .savecancel {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   margin: 20px 0;
   align-items: center;
   /* border: 1px solid red; */
 }
 
 .commenttext {
-  width: 400px;
-  height: 55px;
+  width: 500px;
+  height: auto;
   font-size: 17px;
   padding: 0 15px;
   overflow-x: hidden;
@@ -51,7 +51,7 @@
 }
 
 .commentinputtext {
-  width: 400px;
+  width: 500px;
   height: 55px;
   border-radius: 15px;
   font-size: 17px;
@@ -126,26 +126,26 @@
 }
 
 @media screen and (max-width: 575px) {
-
-  .commentinputtext,
-  .commenttext,
   .button {
     height: 50px;
     font-size: 15px;
   }
 
   .commentinputtext{
+    height: 50px;
+    font-size: 15px;
     width: 300px;
-    overflow-x: hidden;
+    padding: 15px;
   }
 
-  .commenttext, .singletask .commentinputtext {
+  .commenttext {
     padding: 0 10px;
     width: 300px;
+    font-size: 15px;
   }
 
   .searchbarsection{
-    gap: 15px;
+    gap: 10px;
   }
   
   .searchbarsection input{
