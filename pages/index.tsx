@@ -8,7 +8,7 @@ export default function Home() {
     <div className={styles.homecontainer}>
       <div className={styles.blockone}>
         <p className={styles.p1}>
-          Elevate Your <br /> Efficiency <br /> with Acheivo
+          Elevate Your <br /> Efficiency <br /> with <span style={{color:'teal'}}>Acheivo</span> 
         </p>
         <p className={styles.p2}>
           Empowering You to Master Your Tasks Efficiently.
@@ -22,53 +22,10 @@ export default function Home() {
       </div>
 
       <div className={styles.blocktwo}>
-        {/* {session && (
-          <div>
-            <p className={styles.p3}>Welcome back! Access granted, enjoy.</p>
-            <Link href="/blog">
-              <button className={styles.button}>Proceed</button>
-            </Link>
-          </div>
-        )} */}
-
-        {/* {!session && (
-          <div>
-            <p className={styles.p3}>Sign In to continue</p>
-            <Link href="/api/auth/signin">
-              <button
-                className={styles.button}
-                onClick={(e) => {
-                  e.preventDefault();
-                  signIn();
-                }}
-              >
-                Sign In
-              </button>
-            </Link>
-          </div>
-        )}
-
-        {session && (
-          <div>
-            <p className={styles.p3}>Sign In to continue</p>
-            <Link href="/api/auth/signout">
-              <button
-                className={styles.button}
-                onClick={(e) => {
-                  e.preventDefault();
-                  signOut();
-                }}
-              >
-                Sign Out
-              </button>
-            </Link>
-          </div>
-        )} */}
-
         <div>
           <p className={styles.p3}>Let's proceed with Achievo.</p>
           <Link href="/comments">
-            <button className={styles.button}>Proceed</button>
+            <button className={styles.button}>Continue...</button>
           </Link>
         </div>
       </div>
