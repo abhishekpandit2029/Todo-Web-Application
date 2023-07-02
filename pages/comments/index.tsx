@@ -9,6 +9,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import styles from "./index.module.css";
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import css from 'styled-jsx/css';
+import { ClassNames } from '@emotion/react';
 
 interface Comment {
   id: number;
@@ -192,16 +194,20 @@ export default function CommentsPage() {
                     >
                       <UpdateIcon/>
                     </button>
-                    <button
+                    {
+                      !((comment.id) == 1) &&  
+                      <button
                       className={styles.button}
                       onClick={() => deleteComment(comment.id)}
                     >
-                      <DeleteIcon/>
+                     <DeleteIcon/>
                     </button>
+                    }
+                    
                   </div>
                 </div>
               )}
-              <hr style={{width: '90%', margin: '30px 0 0', }}/>
+              <hr className={styles.hr} />
             </div>
           ))}
         </div>
