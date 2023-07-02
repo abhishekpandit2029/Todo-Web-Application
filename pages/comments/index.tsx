@@ -117,6 +117,7 @@ export default function CommentsPage() {
             display: "flex",
             flexDirection: "row",
             gap: "15px",
+            alignItems:"center"
           }}
         >
           <input
